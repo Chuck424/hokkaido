@@ -14,7 +14,6 @@
     padding: 0;
     min-height: 100vh;
   }
-  /* Hero */
   .hero {
     background: linear-gradient(135deg, #2d5a3a 0%, #4a7c5c 50%, #6a994e 100%);
     padding: 48px 24px 40px;
@@ -60,7 +59,6 @@
     color: rgba(255,255,255,0.75);
     font-size: 0.95rem;
   }
-  /* Quick links */
   .day-nav {
     display: flex;
     flex-wrap: wrap;
@@ -93,13 +91,11 @@
     color: #fff;
     border-color: #2d5a3a;
   }
-  /* Container */
   .container {
     max-width: 880px;
     margin: 0 auto;
     padding: 20px 16px 60px;
   }
-  /* Day card */
   .day-card {
     background: #fff;
     border-radius: 20px;
@@ -166,7 +162,6 @@
     font-weight: 600;
     white-space: nowrap;
   }
-  /* Timeline */
   .timeline { padding: 0 24px 20px; }
   .timeline-item {
     display: flex;
@@ -182,6 +177,7 @@
     font-size: 0.85rem;
     color: #4a7c5c;
     padding-top: 2px;
+    flex-shrink: 0;
   }
   .tl-content { flex: 1; font-size: 0.92rem; line-height: 1.6; }
   .tl-content strong { color: #2d5a3a; }
@@ -196,7 +192,7 @@
     text-decoration: underline;
     text-underline-offset: 2px;
   }
-  .tl-content .tag {
+  .tl-content .mc {
     display: inline-block;
     background: #f0f7f0;
     color: #3d6a4f;
@@ -204,16 +200,18 @@
     padding: 1px 10px;
     border-radius: 30px;
     margin-right: 4px;
+    font-family: 'SF Mono', 'Courier New', monospace;
+    letter-spacing: 0.3px;
   }
   .tl-mapcode {
     font-family: 'SF Mono', 'Courier New', monospace;
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     background: #f5f5f5;
-    padding: 1px 8px;
+    padding: 2px 10px;
     border-radius: 4px;
-    color: #666;
+    color: #555;
+    display: inline-block;
   }
-  /* Flight box */
   .flight-box {
     background: linear-gradient(135deg, #e3f0fd 0%, #f0f4ff 100%);
     border-radius: 14px;
@@ -237,7 +235,6 @@
     font-weight: 600;
     color: #2d5a3a;
   }
-  /* Dining card */
   .dining-grid {
     display: flex;
     flex-wrap: wrap;
@@ -251,12 +248,11 @@
     font-size: 0.82rem;
     color: #8b5a2b;
   }
-  /* Hotel card */
   .hotel-info {
     background: #f8faf8;
     border-radius: 12px;
     padding: 12px 16px;
-    margin: 6px 0;
+    margin: 6px 24px 16px;
   }
   .hotel-info .hotel-name {
     font-weight: 700;
@@ -267,7 +263,6 @@
     font-size: 0.8rem;
     color: #888;
   }
-  /* Color themes per day */
   .c0 .day-num { background: #78909c; }
   .c1 .day-num { background: #6a994e; }
   .c2 .day-num { background: #e09f3e; }
@@ -279,35 +274,12 @@
   .c8 .day-num { background: #8a5a5a; }
   .c9 .day-num { background: #5a7a8a; }
 
-  /* Map link */
-  .map-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    background: #e8f0e8;
-    border-radius: 30px;
-    padding: 3px 14px;
-    font-size: 0.75rem;
-    color: #2d5a3a;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  .map-link:hover { background: #2d5a3a; color: #fff; }
-
-  /* Responsive */
   @media (max-width: 600px) {
     .hero h1 { font-size: 2rem; }
     .day-header { flex-direction: column; }
     .timeline-item { flex-direction: column; gap: 4px; }
     .tl-time { min-width: auto; }
     .flight-box { flex-direction: column; align-items: flex-start; }
-  }
-  /* Divider */
-  .section-divider {
-    text-align: center;
-    padding: 8px 0;
-    color: #aaa;
-    font-size: 0.8rem;
   }
 </style>
 </head>
@@ -378,7 +350,7 @@
   </div>
 
   <!-- ============================================================ -->
-  <!-- DAY 1 — 25 Jul (Sat) — 富良野 -->
+  <!-- DAY 1 — 25 Jul (Sat) · 富良野 -->
   <!-- ============================================================ -->
   <div class="day-card c1" id="d1">
     <div class="day-header">
@@ -440,24 +412,25 @@
       <div class="timeline-item">
         <div class="tl-time">12:15–13:45</div>
         <div class="tl-content">
-          <strong>🧀 第一站：富良野起司工房</strong>
-          <span class="note">富良野チーズ工房 · Mapcode: 550 840 171*88</span>
-          <span class="note">午餐兼參觀</span>
+          <strong>🧀 第一站：富良野起司工房（午餐）</strong>
+          <span class="note">富良野チーズ工房</span>
+          <span class="note"><span class="tl-mapcode">📍 Mapcode: 550 840 171*88</span>（或 <span class="tl-mapcode">550 840 169*73</span>）</span>
         </div>
       </div>
       <div class="timeline-item">
         <div class="tl-time">14:00–15:30</div>
         <div class="tl-content">
           <strong>🌲 第二站：森林精靈露台 (Ningle Terrace)</strong>
-          <span class="note">Mapcode: 919 553 426*00 · 新富良野王子大飯店停車場（免費）</span>
-          <span class="note">停車靠右側（近森林嗰邊）</span>
+          <span class="note">新富良野王子大飯店側</span>
+          <span class="note"><span class="tl-mapcode">📍 Mapcode: 919 553 426*00</span> · 📞 TEL: 0167-22-1111</span>
+          <span class="note">停車：飯店免費戶外停車場，靠右側（近森林）</span>
         </div>
       </div>
       <div class="timeline-item">
         <div class="tl-time">15:00</div>
         <div class="tl-content">
           <strong>🏨 Check-in · 富良野Natulux酒店</strong>
-          <span class="note">〒076-0026 北海道富良野市朝日町1-35</span>
+          <span class="note">〒076-0026 北海道富良野市朝日町1-35 · <a href="https://maps.app.goo.gl/dGFvtCVhBcfjEcAQA" target="_blank">📍 Google Maps</a></span>
           <span class="note">有免費停車場 · 問前台今晚有無祭典／夜市</span>
           <span class="note">💡 日語：今日、近くで祭りやライトアップはありますか？</span>
         </div>
@@ -466,13 +439,14 @@
         <div class="tl-time">16:00–18:00</div>
         <div class="tl-content">
           <strong>💜 第三站：富田農場（薰衣草花田）</strong>
-          <span class="note">Mapcode: 349 172 132*30 · 首選 P1 停車場</span>
-          <span class="note">🍈 富田哈密瓜工房（唔係 all you can eat）</span>
+          <span class="note"><span class="tl-mapcode">📍 Mapcode: 349 172 132*30</span> · 📞 TEL: 0167-39-3939</span>
+          <span class="note">首選 P1 停車場 → 次選 P2 或 P3</span>
+          <span class="note">🍈 富田哈密瓜工房 Tomita Melon House · <a href="https://mimigo.tw/tomita-m/" target="_blank">📎 參考</a></span>
           <span class="note"><a href="https://spirit0926.pixnet.net/blog/posts/3050678736" target="_blank">📎 參考網誌</a></span>
         </div>
       </div>
       <div class="timeline-item">
-        <div class="tl-time">黃昏～</div>
+        <div class="tl-time">黃昏</div>
         <div class="tl-content">
           <strong>🌆 國道 237 號回程</strong>
           <span class="note">18:00 未日落，19:10 日落後有暮光到 19:40 — 自駕新手友善</span>
@@ -483,6 +457,7 @@
         <div class="tl-content">
           <strong>🍛 唯我獨尊 — 自製香腸咖哩</strong>
           <span class="note">富良野歐姆蛋咖哩飯 · 市営無料駐車場可用</span>
+          <span class="note">🅿️ 市営無料駐車場：〒076-0026 1 Asahimachi, Furano</span>
           <div class="dining-grid">
             <span class="dining-item">🍛 唯我獨尊</span>
             <span class="dining-item">🥚 歐姆蛋咖哩</span>
@@ -493,7 +468,7 @@
   </div>
 
   <!-- ============================================================ -->
-  <!-- DAY 2 — 26 Jul (Sun) — 美瑛 -->
+  <!-- DAY 2 — 26 Jul (Sun) · 美瑛 -->
   <!-- ============================================================ -->
   <div class="day-card c2" id="d2">
     <div class="day-header">
@@ -521,33 +496,35 @@
       <div class="timeline-item">
         <div class="tl-time">09:10–10:30</div>
         <div class="tl-content">
-          <strong>🌷 四季彩之丘 (Shikisai no Oka)</strong>
-          <span class="note">Mapcode: 349 701 160*33</span>
+          <strong>🌷 第一站：四季彩之丘（Shikisai no Oka）</strong>
+          <span class="note"><span class="tl-mapcode">📍 Mapcode: 349 701 160*33</span></span>
           <span class="note">可自費租 Buggy 或乘牽引車遊覽花田</span>
-          <span class="note"><a href="https://spirit0926.pixnet.net/blog/posts/3050673528" target="_blank">📎 參考</a></span>
+          <span class="note"><a href="https://spirit0926.pixnet.net/blog/posts/3050673528" target="_blank">📎 參考網誌</a></span>
         </div>
       </div>
       <div class="timeline-item">
         <div class="tl-time">11:00–12:15</div>
         <div class="tl-content">
-          <strong>💎 白金青池 (Blue Pond) ＆ 白鬚瀑布</strong>
-          <span class="note">Mapcode: 349 568 888*00</span>
+          <strong>💎 第二站：白金青池（Blue Pond）＆ 白鬚瀑布</strong>
+          <span class="note"><span class="tl-mapcode">📍 Mapcode: 349 568 888*00</span></span>
           <span class="note">🚗 停車費 500 日圓 · 從美瑛町出發 18 分鐘</span>
+          <span class="note"><a href="https://spirit0926.pixnet.net/blog/posts/3050673528" target="_blank">📎 參考網誌</a></span>
         </div>
       </div>
       <div class="timeline-item">
         <div class="tl-time">12:45–14:15</div>
         <div class="tl-content">
-          <strong>🍜 美瑛市區午餐 ＆ 美瑛選果</strong>
-          <span class="note">Mapcode: 389 010 378*17</span>
+          <strong>🍜 第三站：美瑛市區午餐 ＆ 美瑛選果</strong>
+          <span class="note"><span class="tl-mapcode">📍 Mapcode: 389 010 378*17</span></span>
         </div>
       </div>
       <div class="timeline-item">
         <div class="tl-time">14:30–16:00</div>
         <div class="tl-content">
-          <strong>🛣️ 拼布之路 — 「最防曬・冷氣兜風」巡禮</strong>
-          <span class="note">唯一落車位：西北之丘展望公園 (Mapcode: 389 070 315*00)</span>
-          <span class="note">肯與瑪麗之樹 · 七星之樹（旁邊白樺樹已被砍）</span>
+          <strong>🛣️ 第四站：拼布之路 — 「最防曬・冷氣兜風」巡禮</strong>
+          <span class="note">唯一落車位：<strong>西北之丘展望公園</strong> <span class="tl-mapcode">📍 389 070 315*00</span></span>
+          <span class="note">肯與瑪麗之樹 <span class="tl-mapcode">📍 389 071 727*41</span></span>
+          <span class="note">七星之樹 <span class="tl-mapcode">📍 389 157 155*44</span>（旁邊白樺樹已被砍）</span>
         </div>
       </div>
       <div class="timeline-item">
@@ -560,8 +537,9 @@
         <div class="tl-time">16:45–18:15</div>
         <div class="tl-content">
           <strong>🍣 迴轉壽司 Toriton 旭神店</strong>
-          <span class="note">Mapcode: 79 267 521*55 · 務必 17:00 前到</span>
+          <span class="note"><span class="tl-mapcode">📍 Mapcode: 79 267 521*55</span> · 務必 17:00 前到</span>
           <span class="note">〒078-8373 北海道旭川市旭神3条5丁目1−1</span>
+          <span class="note"><a href="https://maps.app.goo.gl/ZBGqM2hrHT9ZWzfv9?g_st=ic" target="_blank">📍 Google Maps</a></span>
           <div class="dining-grid">
             <span class="dining-item">🍣 Toriton 旭神</span>
           </div>
@@ -571,21 +549,22 @@
         <div class="tl-time">夜晚</div>
         <div class="tl-content">
           <strong>🏪 AEON Mall 行街食食食</strong>
-          <span class="note">GiGO メガセンタートライアル旭川（扭蛋）</span>
-          <span class="note">停車：AEON Mall 立體停車場 · 酒店特約蓋章折抵</span>
+          <span class="note">GiGO メガセンタートライアル旭川（扭蛋）· <a href="https://maps.app.goo.gl/PPtiRGLZx5reswHb8" target="_blank">📍 Maps</a></span>
+          <span class="note">🅿️ 停車：AEON Mall 立體停車場 <span class="tl-mapcode">📍 Mapcode: 79 353 087*36</span>（酒店蓋章折抵）</span>
         </div>
       </div>
     </div>
 
-    <div class="hotel-info" style="margin:0 24px 16px;">
+    <div class="hotel-info">
       <div class="hotel-name">🏨 JR Inn 旭川</div>
       <div class="hotel-addr">〒070-0030 北海道旭川市宮下通り7丁目2-5</div>
       <div class="hotel-addr">📞 +81 166-24-8888</div>
+      <div class="hotel-addr">🅿️ 旭川宮下パーキング (8 Chome-1953 Miyashitadori)</div>
     </div>
   </div>
 
   <!-- ============================================================ -->
-  <!-- DAY 3 — 27 Jul (Mon) — 旭山動物園 -->
+  <!-- DAY 3 — 27 Jul (Mon) · 旭山動物園 -->
   <!-- ============================================================ -->
   <div class="day-card c3" id="d3">
     <div class="day-header">
@@ -608,7 +587,7 @@
         <div class="tl-content">
           <strong>退房出發 → 衝動物園開園</strong>
           <span class="note">正門免費停車場（最大、離明星動物館最近）</span>
-          <span class="note">Mapcode: 79 358 847*11</span>
+          <span class="note"><span class="tl-mapcode">📍 Mapcode: 79 358 847*11</span></span>
           <span class="note">⚠️ 認清路牌，拒絕揮旗歐巴桑 — 直駛到官方「旭川市營無料駐車場」綠色牌</span>
         </div>
       </div>
@@ -623,8 +602,8 @@
       <div class="timeline-item">
         <div class="tl-time">13:30–14:30</div>
         <div class="tl-content">
-          <strong>🍜 旭川拉麵村</strong>
-          <span class="note">Mapcode: 79 388 477*22</span>
+          <strong>🍜 旭川拉麵村（あさひかわラーメン村）</strong>
+          <span class="note"><span class="tl-mapcode">📍 Mapcode: 79 388 477*22</span></span>
           <div class="dining-grid">
             <span class="dining-item">🍜 旭川拉麵</span>
           </div>
@@ -635,7 +614,7 @@
         <div class="tl-content">
           <strong>🚶 Chill Walk · 旭川市區</strong>
           <span class="note">旭川平和通買物公園 · AEON Mall · 3・6街（扭蛋）</span>
-          <span class="note">Lunch: McDonald's</span>
+          <span class="note"><a href="https://www.gltjp.com/zh-hant/directory/item/13771/" target="_blank">📎 3・6街參考</a></span>
         </div>
       </div>
       <div class="timeline-item">
@@ -648,14 +627,15 @@
         <div class="tl-time">夜</div>
         <div class="tl-content">
           <strong>🎉 大通公園啤酒節</strong>
+          <span class="note"><a href="https://tabelog.com/tw/hokkaido/A0101/A010103/1052335/" target="_blank">📎 焼肉 Tabelog</a></span>
           <div class="dining-grid">
-            <span class="dining-item">🥩 燒肉（tabelog）</span>
+            <span class="dining-item">🥩 燒肉</span>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="hotel-info" style="margin:0 24px 16px;">
+    <div class="hotel-info">
       <div class="hotel-name">🏨 船舶花園薄野酒店</div>
       <div class="hotel-addr">〒064-0805 北海道札幌市中央区南5条西6丁目16-1</div>
       <div class="hotel-addr">🅿️ 行兩分鐘停車場 (7 Chome Minami 6 Jonishi)</div>
@@ -663,7 +643,7 @@
   </div>
 
   <!-- ============================================================ -->
-  <!-- DAY 4 — 28 Jul (Tue) — 札幌市區 -->
+  <!-- DAY 4 — 28 Jul (Tue) · 札幌市區 -->
   <!-- ============================================================ -->
   <div class="day-card c4" id="d4">
     <div class="day-header">
@@ -690,8 +670,7 @@
         <div class="tl-time">上午</div>
         <div class="tl-content">
           <strong>⛩️ 北海道神宮</strong>
-          <span class="note">肥雀神社（可愛 fat 雀）</span>
-          <span class="note"><a href="https://natasha-traveler.tw/sapporo-suwajinja-guide/" target="_blank">📎 參考</a></span>
+          <span class="note">肥雀神社（可愛 fat 雀）· <a href="https://natasha-traveler.tw/sapporo-suwajinja-guide/" target="_blank">📎 參考</a></span>
         </div>
       </div>
       <div class="timeline-item">
@@ -699,9 +678,10 @@
         <div class="tl-content">
           <strong>🍛 Magic Spice 札幌本店</strong>
           <span class="note"><a href="https://tabelog.com/tw/hokkaido/A0101/A010301/1000163/" target="_blank">📎 Tabelog</a></span>
+          <span class="note">Option: 根室花丸 南鄉店（〒003-0022 札幌市白石區南郷通19丁目南8-2）</span>
           <div class="dining-grid">
             <span class="dining-item">🍛 Magic Spice</span>
-            <span class="dining-item">🍣 根室花丸（南鄉店）</span>
+            <span class="dining-item">🍣 根室花丸</span>
           </div>
         </div>
       </div>
@@ -709,16 +689,17 @@
         <div class="tl-time">下午</div>
         <div class="tl-content">
           <strong>🛍️ 札幌市區巡禮</strong>
-          <span class="note">札幌車站周邊 (大丸) · 札幌時計台 · 大通公園</span>
-          <span class="note">JR塔展望室 T38 · 狸小路商店街 · PARCO</span>
-          <span class="note">🎮 C-pla 扭蛋專門店（狸小路）開到 22:00</span>
-          <span class="note">☕ 森彥咖啡</span>
+          <span class="note">札幌車站周邊（大丸）· 札幌時計台 · 大通公園</span>
+          <span class="note">JR塔展望室 T38 · <a href="https://maps.app.goo.gl/MEUbwgMKMNv2ui2V9" target="_blank">📍 Maps</a></span>
+          <span class="note">狸小路商店街 · 扭蛋 C-pla 狸小路店（開到 22:00）</span>
+          <span class="note">☕ 森彥咖啡 · <a href="https://maps.app.goo.gl/o933idoFj6pvb" target="_blank">📍 Maps</a></span>
+          <span class="note">PARCO 札幌</span>
         </div>
       </div>
       <div class="timeline-item">
         <div class="tl-time">17:00–21:00</div>
         <div class="tl-content">
-          <strong>🌃 藻岩山夜景（日本新三大夜景）</strong>
+          <strong>🌃 Option: 藻岩山夜景（日本新三大夜景）</strong>
           <span class="note">🚡 纜車上山 · Klook/KKday 買飛</span>
           <span class="note"><a href="https://hokkaido.letsgojp.com/archives/640881/" target="_blank">📎 參考</a></span>
         </div>
@@ -727,9 +708,9 @@
         <div class="tl-time">19:00</div>
         <div class="tl-content">
           <strong>🥩 Dinner</strong>
-          <span class="note">Option: 燒肉 Minaho Shinkin（整頭牛採購，可預約）</span>
-          <span class="note">Option: Itadakimasu（羊肉）🤣</span>
-          <span class="note"><a href="https://tabelog.com/tw/hokkaido/A0101/A010103/1062931/party/" target="_blank">📎 燒肉 Minaho</a></span>
+          <span class="note">燒肉 Minaho Shinkin（整頭牛採購，可預約）· <a href="https://tabelog.com/tw/hokkaido/A0101/A010103/1062931/party/" target="_blank">📎 Tabelog</a></span>
+          <span class="note">其他肉食選擇：<a href="https://tw.savorjapan.com/contents/discover-oishii-japan/not-just-about-great-seafood-13-top-yakiniku-restaurants-in-sapporo" target="_blank">📎 參考</a></span>
+          <span class="note">Option: Itadakimasu（羊肉）🤣 · <a href="https://tabelog.com/tw/hokkaido/A0101/A010103/1036161/" target="_blank">📎 Tabelog</a></span>
           <div class="dining-grid">
             <span class="dining-item">🥩 燒肉 Minaho</span>
             <span class="dining-item">🐑 Itadakimasu</span>
@@ -740,7 +721,7 @@
   </div>
 
   <!-- ============================================================ -->
-  <!-- DAY 5 — 29 Jul (Wed) — 小樽 -->
+  <!-- DAY 5 — 29 Jul (Wed) · 小樽 -->
   <!-- ============================================================ -->
   <div class="day-card c5" id="d5">
     <div class="day-header">
@@ -780,9 +761,9 @@
       <div class="timeline-item">
         <div class="tl-time">上午</div>
         <div class="tl-content">
-          <strong>🫐 藍莓採摘（Option）</strong>
-          <span class="note">村田果樹園（無時間限制） · Nitori 觀光果樹園</span>
-          <span class="note"><a href="http://murata-orchard.com/content1.html" target="_blank">📎 村田果樹園</a></span>
+          <strong>🫐 Option: 藍莓採摘</strong>
+          <span class="note">村田果樹園（無時間限制）· <a href="http://murata-orchard.com/content1.html" target="_blank">📎 網站</a></span>
+          <span class="note">Nitori 觀光果樹園 · <a href="https://www.visit-hokkaido.jp/tw/spot/detail_13137.html" target="_blank">📎 參考</a></span>
         </div>
       </div>
       <div class="timeline-item">
@@ -801,21 +782,22 @@
         <div class="tl-content">
           <strong>🏮 小樽運河 — 遊覽船</strong>
           <span class="note">🚶 散步：Chiikawa shop · 玻璃工藝</span>
-          <span class="note">🏪 WING BAY OTARU (AEON Mall) · namco 扭蛋</span>
+          <span class="note">🏪 WING BAY OTARU (AEON Mall) · <a href="https://maps.app.goo.gl/xTvctr1z1LxKTUAo9" target="_blank">📍 Maps</a></span>
+          <span class="note">🎮 namco 扭蛋（商場5番街3樓）</span>
         </div>
       </div>
     </div>
 
-    <div class="hotel-info" style="margin:0 24px 16px;">
+    <div class="hotel-info">
       <div class="hotel-name">🏨 小樽格蘭貝爾酒店 GRANBELL HOTEL OTARU</div>
       <div class="hotel-addr">〒047-0027 北海道小樽市堺町1-1</div>
       <div class="hotel-addr">📞 +81 134-64-7573（Chuck 預訂）</div>
-      <div class="hotel-addr">🅿️ パーククル 小樽市堺町第1</div>
+      <div class="hotel-addr">🅿️ パーククル小樽市堺町第1 (1-30 Sakaimachi)</div>
     </div>
   </div>
 
   <!-- ============================================================ -->
-  <!-- DAY 6 — 30 Jul (Thu) — 積丹海膽 + 洞爺湖 -->
+  <!-- DAY 6 — 30 Jul (Thu) · 積丹海膽 + 洞爺湖 -->
   <!-- ============================================================ -->
   <div class="day-card c6" id="d6">
     <div class="day-header">
@@ -881,7 +863,7 @@
       </div>
     </div>
 
-    <div class="hotel-info" style="margin:0 24px 16px;">
+    <div class="hotel-info">
       <div class="hotel-name">🏨 TOYA 乃之風湖景度假村（乃の風リゾート）</div>
       <div class="hotel-addr">〒049-5721 北海道虻田郡洞爺湖町洞爺湖温泉29-1</div>
       <div class="hotel-addr">📞 +81-570-026-571 · 🅿️ 有停車場</div>
@@ -889,7 +871,7 @@
   </div>
 
   <!-- ============================================================ -->
-  <!-- DAY 7 — 31 Jul (Fri) — 登別 + 支笏湖 -->
+  <!-- DAY 7 — 31 Jul (Fri) · 登別 + 支笏湖 -->
   <!-- ============================================================ -->
   <div class="day-card c7" id="d7">
     <div class="day-header">
@@ -932,14 +914,16 @@
         <div class="tl-time">16:00</div>
         <div class="tl-content">
           <strong>🚗 最遲 16:00 出車返札幌</strong>
+          <span class="note">大通公園 → 札幌夏季啤酒節</span>
         </div>
       </div>
       <div class="timeline-item">
         <div class="tl-time">夜</div>
         <div class="tl-content">
           <strong>🎉 大通公園 — 札幌夏季啤酒節</strong>
-          <span class="note">🎮 GiGO 札幌站西口 (開到 23:30) · GASHAPON Department Store (開到 20:00)</span>
-          <span class="note">🎮 C-pla 扭蛋 狸小路5丁目店 (兩層，10:00-23:00)</span>
+          <span class="note">🎮 GiGO 札幌站西口（開到 23:30）· <a href="https://maps.app.goo.gl/ikXmFZrJuisHUiyZA" target="_blank">📍 Maps</a></span>
+          <span class="note">🎮 GASHAPON Department Store 東急百貨店札幌店（開到 20:00）</span>
+          <span class="note">🎮 C-pla 扭蛋 狸小路5丁目店（兩層，10:00-23:00）</span>
         </div>
       </div>
       <div class="timeline-item">
@@ -947,7 +931,7 @@
         <div class="tl-content">
           <strong>🍣 迴轉壽司 Toriton 豐平店</strong>
           <span class="note"><a href="https://maps.app.goo.gl/tujPzzyoFfteLm4e8?g_st=ic" target="_blank">📍 Google Maps</a></span>
-          <span class="note">🍜 海味はちきょう別亭おやじ（二番手）</span>
+          <span class="note">🍜 海味はちきょう別亭おやじ（二番手）· <a href="https://tabelog.com/hokkaido/A0101/A010103/1020854/" target="_blank">📎 Tabelog</a></span>
           <div class="dining-grid">
             <span class="dining-item">🍣 Toriton 豐平</span>
             <span class="dining-item">🍜 海味はちきょう</span>
@@ -956,7 +940,7 @@
       </div>
     </div>
 
-    <div class="hotel-info" style="margin:0 24px 16px;">
+    <div class="hotel-info">
       <div class="hotel-name">🏨 THE GATE HOTEL 札幌 by HULIC</div>
       <div class="hotel-addr">〒060-0003 北海道札幌市中央区北3条西3丁目</div>
       <div class="hotel-addr">📞 +81 11-206-4588</div>
@@ -965,7 +949,7 @@
   </div>
 
   <!-- ============================================================ -->
-  <!-- DAY 8 — 1 Aug (Sat) — 札幌市區 -->
+  <!-- DAY 8 — 1 Aug (Sat) · 札幌市區 -->
   <!-- ============================================================ -->
   <div class="day-card c8" id="d8">
     <div class="day-header">
@@ -993,7 +977,7 @@
         <div class="tl-time">下午</div>
         <div class="tl-content">
           <strong>🛍️ 上半場：札幌車站周邊</strong>
-          <span class="note">大丸百貨 · Afternoon Tea</span>
+          <span class="note">大丸百貨 · Afternoon Tea TEAROOM · <a href="https://maps.app.goo.gl/z1mi1Wof1TempPdZ9" target="_blank">📍 Maps</a></span>
         </div>
       </div>
       <div class="timeline-item">
@@ -1001,22 +985,23 @@
         <div class="tl-content">
           <strong>🛍️ 下半場：大通／薄野</strong>
           <span class="note">經地下步行街 Chi-Ka-Ho 到狸小路商店街</span>
-          <span class="note">🎮 C-pla 狸小路5丁目店 (兩層，10:00-23:00)</span>
+          <span class="note">🎮 C-pla 狸小路5丁目店（兩層，10:00-23:00）</span>
         </div>
       </div>
       <div class="timeline-item">
-        <div class="tl-time">15:00前</div>
+        <div class="tl-time">15:00 前</div>
         <div class="tl-content">
-          <strong>🐑 羊之丘展望台</strong>
+          <strong>🐑 Option: 羊之丘展望台</strong>
           <span class="note">體驗時間 10:00-15:00（最遲 14:45 入場）</span>
           <span class="note">可採摘薰衣草帶回家 · 常見鹿和狐狸</span>
+          <span class="note">⚠️ 「今日還在第九洞給烏鴉啄了一包糖飛走」</span>
           <span class="note"><a href="https://www.hitsujigaoka.jp/?lang=zh_TW" target="_blank">📎 官方網站</a></span>
         </div>
       </div>
       <div class="timeline-item">
-        <div class="tl-time">16:00前</div>
+        <div class="tl-time">16:00 前</div>
         <div class="tl-content">
-          <strong>🙏 頭大佛殿（4pm 關門）</strong>
+          <strong>🙏 Option: 頭大佛殿（4pm 關門）</strong>
         </div>
       </div>
       <div class="timeline-item">
@@ -1024,6 +1009,7 @@
         <div class="tl-content">
           <strong>🐑 成吉思汗燒肉</strong>
           <span class="note">宵夜：一蘭拉麵</span>
+          <span class="note">Option: 二條市場（not recommended 🤣）· <a href="https://tabelog.com/tw/hokkaido/A0101/A010103/1035973/" target="_blank">📎 Tabelog</a></span>
           <div class="dining-grid">
             <span class="dining-item">🐑 成吉思汗</span>
             <span class="dining-item">🍜 一蘭</span>
@@ -1034,7 +1020,7 @@
   </div>
 
   <!-- ============================================================ -->
-  <!-- DAY 9 — 2 Aug (Sun) — 場外市場 + 返程 -->
+  <!-- DAY 9 — 2 Aug (Sun) · 場外市場 + 返程 -->
   <!-- ============================================================ -->
   <div class="day-card c9" id="d9">
     <div class="day-header">
@@ -1060,7 +1046,7 @@
       <div class="timeline-item">
         <div class="tl-time">11:00</div>
         <div class="tl-content">
-          <strong>Check out · THE GATE HOTEL</strong>
+          <strong>🏨 Check out · THE GATE HOTEL</strong>
         </div>
       </div>
       <div class="timeline-item">
@@ -1106,7 +1092,7 @@
   </div>
 
   <!-- ============================================================ -->
-  <!-- DAY 10 — 3 Aug (Mon) — 終點 -->
+  <!-- DAY 10 — 3 Aug (Mon) · 終點 -->
   <!-- ============================================================ -->
   <div class="day-card" style="background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);">
     <div class="day-header">
@@ -1143,6 +1129,61 @@
           <span class="note">お疲れ様でした！🍻</span>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- MAPCODE SUMMARY -->
+  <!-- ============================================================ -->
+  <div class="day-card" style="background: #fff;">
+    <div class="day-header">
+      <div class="day-title">
+        <span class="day-num" style="background:#3d6a4f; width:auto; padding:0 18px;">🗺️</span>
+        <div>
+          <div class="day-name">MAPCODE 總表</div>
+          <div class="day-date">全部導航用 Mapcode（マップコード）</div>
+        </div>
+      </div>
+      <div class="day-badge">
+        <span class="badge-drive">📌 入落車 GPS 就到</span>
+      </div>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="tl-time">🌻 Day 1</div>
+        <div class="tl-content">
+          <strong>富良野</strong>
+          <span class="note"><span class="tl-mapcode">550 840 171*88</span> 富良野起司工房（或 <span class="tl-mapcode">550 840 169*73</span>）</span>
+          <span class="note"><span class="tl-mapcode">919 553 426*00</span> 森林精靈露台／新富良野王子大飯店</span>
+          <span class="note"><span class="tl-mapcode">349 172 132*30</span> 富田農場（薰衣草花田）</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-time">🌾 Day 2</div>
+        <div class="tl-content">
+          <strong>美瑛・旭川</strong>
+          <span class="note"><span class="tl-mapcode">349 701 160*33</span> 四季彩之丘</span>
+          <span class="note"><span class="tl-mapcode">349 568 888*00</span> 白金青池 (Blue Pond)</span>
+          <span class="note"><span class="tl-mapcode">389 010 378*17</span> 美瑛選果</span>
+          <span class="note"><span class="tl-mapcode">389 070 315*00</span> 西北之丘展望公園</span>
+          <span class="note"><span class="tl-mapcode">389 071 727*41</span> 肯與瑪麗之樹</span>
+          <span class="note"><span class="tl-mapcode">389 157 155*44</span> 七星之樹</span>
+          <span class="note"><span class="tl-mapcode">79 267 521*55</span> 迴轉壽司 Toriton 旭神店</span>
+          <span class="note"><span class="tl-mapcode">79 353 087*36</span> AEON Mall 旭川（停車場）</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-time">🐧 Day 3</div>
+        <div class="tl-content">
+          <strong>旭山</strong>
+          <span class="note"><span class="tl-mapcode">79 358 847*11</span> 旭山動物園正門停車場</span>
+          <span class="note"><span class="tl-mapcode">79 388 477*22</span> 旭川拉麵村</span>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -1198,6 +1239,7 @@
           <span class="note">🔹 取車時現場加購 <strong>HEP</strong>（高速公路吃到飽）</span>
           <span class="note">🔹 國道 237 號對新手友善 · 富良野路段平坦筆直</span>
           <span class="note">🔹 18:00 前仍有陽光，19:10 日落後有暮光至 19:40</span>
+          <span class="note">🔹 Mapcode 係日本導航系統，入落車 GPS 就用到 🎯</span>
         </div>
       </div>
     </div>
@@ -1212,7 +1254,6 @@
 
 </div>
 
-<!-- Footer -->
 <div style="text-align:center; padding: 16px 16px 40px; color: #999; font-size: 0.75rem; letter-spacing: 1px;">
   🍀 Hokkaido 2026 · Chuck & Dennis · 24 Jul – 3 Aug
 </div>
